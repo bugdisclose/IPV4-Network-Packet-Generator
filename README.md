@@ -1,6 +1,6 @@
 # IPV4-Network-Packet-Generator
 
-![NPG LOGO](https://nmap.org/nping/images/logos/nping_logo_257x423.png)
+![NPG LOGO](https://www.apcon.com/sites/default/files/Images%20In%20Use/networking_icon_blue.png)
 
 
 A packet generator or packet builder is a type of software
