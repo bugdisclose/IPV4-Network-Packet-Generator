@@ -1,0 +1,46 @@
+body{
+	background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/3210/linux-ubuntu-logos-simple-background-1920x1080-wallpaper.jpg");
+	color: #ccc;
+}
+
+input[type=radio]{
+	background-color: #222;
+	color: #ccc;
+	padding: 4px 4px;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=radio]:hover{
+	background-color: tomato;
+	color: #ccc;
+}
+
+td{
+	font-family: Arial;
+	font-size: 20px;
+	border: 1px solid #222;
+	padding: 3px 3px;
+}
+
+button{
+	background-color: #222;
+	color: #ccc;
+	cursor: pointer;
+	border: 2px solid tomato;
+	text-align: center;
+	float: center;
+	display: inline-block;
+	font-size: 25px;
+}
+
+
+input[type=submit]{
+	background-color: #222;
+	color: #ccc;
+	cursor: pointer;
+	border: 2px solid tomato;
+	text-align: center;
+	display: inline-block;
+	font-size: 25px;
+}

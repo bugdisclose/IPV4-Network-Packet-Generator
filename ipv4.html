@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IPV4 Traffic Generator</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+	<form method="POST" action="server.php">
+	<center>
+		<h1>IPV4 Traffic Generator</h1>
+		<h3>
+			<table>
+
+				<tr><td>Source Address IPV4</td><td><input type="text" name="sadd"></td></tr>
+				
+				<tr><td>Destination Address IPV4</td><td><input type="text" name="dadd"></td></tr>
+
+				<tr><td>PROTOCOL</td><td><select name="protocol" onclick="disabledrop(this)">
+				<option>UDP</option>
+				<option>TCP</option>
+				<option>ICMP</option>
+			    </select>
+				</td></tr>
+
+				<tr><td>Source PORT</td><td><select id="sp" name="sp">
+					<option value="443">443</option>
+					<option value="21">21</option>
+					<option value="80">80</option>
+					<option value="22">22</option>
+					<option value="53">53</option>
+					<option value="25">25</option>
+				</select>
+			   </td>
+
+			   <tr><td>Destination Port</td><td><select id="dp" name="dp">
+					<option value="443">443</option>
+					<option value="21">21</option>
+					<option value="80">80</option>
+					<option value="22">22</option>
+					<option value="53">53</option>
+					<option value="25">25</option>
+				</select>
+
+				<script>
+					function disabledrop(obj1) {
+						var v1=obj1.value;
+
+						if(v1 == "icmp")
+						{
+							document.getElementById("sp").disable=true;
+							document.getElementById("dp").disable=true;
+						}
+						else{
+							document.getElementById("sp").disable=false;
+							document.getElementById("dp").disable=false;
+						}
+					}
+				</script>
+			</td></tr>
+
+			<tr><td>Number Of Packets</td><td>
+				<select name="conti" onchange="disablen(this)">
+					<option value="cont">Continous</option>
+					<option value="ncont">Non-Continous</option>
+				</select>
+
+				<input type="text" name="number" disabled="true" id="text1"><br>
+
+				<script>
+					
+					function disablen(obj) {
+						var t1=document.getElementById("text1");
+						t1.disabled = obj.value == "cont";
+					}
+				</script>
+			</td></tr>
+
+			<tr><td>Payload length per packet</td><td><select name="pl">
+				<option>512</option>
+				<option>8</option>
+			</select>
+
+			<tr><td>Interpacket Gap </td><td><input type="text" name="igap"></td></tr>
+
+			<tr><td> Payload Option </td><td><input type="radio" name="select" value="own" onclick="dis(this)" checked="true"> Define my own
+				<input type="radio" name="select" value="random" onclick="dis(this)">Random<br>
+				<input type="text" name="po" id="s1"><br>
+
+				<script>
+					function dis(obj) {
+						var w=obj.value;
+						if(w == "own"){
+							document.getElementById("s1").disabled=false;
+						}
+						else if(w == "random"){
+
+							document.getElementById("s1").disabled=true;
+						}
+					}
+				</script>
+			</table><br><br>
+
+			<input type="submit" value="Submit">
+			<button type="RESET">RESET</button>
+		</h3>
+	</center>
+	</form>
+	<center>
+	<form method="POST" action="stop.php">
+		<input type="submit" value="Stop">
+	</form>
+	<h3>coded by satyendra</h3>
+	</center>
+</body>
+</html>
